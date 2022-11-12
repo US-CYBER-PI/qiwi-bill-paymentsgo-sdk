@@ -126,6 +126,14 @@ func (s *Client) CreatePayment(bills Models.CreatePayment, paymentId string) *Mo
 	return &paymentsStatusResponses
 }
 
+func (s *Client) GetPayment(paymentId string) *Models.PaymentsStatusResponses {
+	var paymentsStatusResponses Models.PaymentsStatusResponses
+
+	var body = s.HttpRequest(nil, fmt.Sprintf("payin/v1/sites/%s/payments/%s", s.siteId, paymentId), "GET")
+	json.Unmarshal(body, &paymentsStatusResponses)
+	return &paymentsStatusResponses
+}
+
 func (s *Client) PaymentsComplete(bills Models.CreateBills, paymentId string) *Models.PaymentsComplete {
 
 	var paymentsComplete Models.PaymentsComplete
