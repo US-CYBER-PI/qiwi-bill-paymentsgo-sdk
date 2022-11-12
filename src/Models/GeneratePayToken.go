@@ -1,5 +1,7 @@
 package Models
 
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/Ets"
+
 type GeneratePayToken struct {
 	RequestId string `json:"requestId"`
 	Phone     string `json:"phone"`
@@ -12,4 +14,9 @@ func NewGeneratePayToken(RequestId string, Phone string, AccountId string) *Gene
 		Phone:     Phone,
 		AccountId: AccountId,
 	}
+}
+
+type GeneratePayTokenResponse struct {
+	RequestId string     `json:"requestId"`
+	Status    Ets.Status `json:"status"`
 }

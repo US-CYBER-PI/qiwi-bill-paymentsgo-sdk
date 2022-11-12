@@ -34,12 +34,13 @@ func (s *Client) HttpRequest(js []byte, uri, method string) []byte {
 
 }
 
-func (s *Client) SmsConfirm(bills Models.SmsConfirm) *Models.SmsConfirm {
+func (s *Client) SmsConfirm(bills Models.SmsConfirm) *Models.SmsConfirmResponses {
 
-	var smsConfirm Models.SmsConfirm
+	var smsConfirm Models.SmsConfirmResponses
 
 	b, err := json.Marshal(bills)
-	if err == nil {
+	if err != nil {
+		panic(err)
 	}
 	var body = s.HttpRequest(b, fmt.Sprintf("payin-tokenization-api/v1/sites/%s/token-requests/complete", s.siteId), "POST")
 
@@ -48,12 +49,13 @@ func (s *Client) SmsConfirm(bills Models.SmsConfirm) *Models.SmsConfirm {
 	return &smsConfirm
 }
 
-func (s *Client) GeneratePayToken(bills Models.CreateBills) *Models.GeneratePayToken {
+func (s *Client) GeneratePayToken(bills Models.GeneratePayToken) *Models.GeneratePayTokenResponse {
 
-	var generatePayToken Models.GeneratePayToken
+	var generatePayToken Models.GeneratePayTokenResponse
 
 	b, err := json.Marshal(bills)
-	if err == nil {
+	if err != nil {
+		panic(err)
 	}
 
 	var body = s.HttpRequest(b, fmt.Sprintf("payin-tokenization-api/v1/sites/%s/token-requests", s.siteId), "POST")
