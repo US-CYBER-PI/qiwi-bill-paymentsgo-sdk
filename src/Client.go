@@ -113,14 +113,15 @@ func (s *Client) Payments(bills Models.CreateBills, billId string) *Models.Payme
 	return &payments
 }
 
-func (s *Client) PaymentsStatusResponses(bills Models.CreateBills, paymentId string) *Models.PaymentsStatusResponses {
+func (s *Client) CreatePayment(bills Models.CreatePayment, paymentId string) *Models.PaymentsStatusResponses {
 
 	var paymentsStatusResponses Models.PaymentsStatusResponses
-	_, err := json.Marshal(bills)
-	if err == nil {
+	jsonString, err := json.Marshal(bills)
+	if err != nil {
+		panic(err)
 	}
 
-	var body = s.HttpRequest(nil, fmt.Sprintf("payin/v1/sites/%s/payments/%s", s.siteId, paymentId), "GET")
+	var body = s.HttpRequest(jsonString, fmt.Sprintf("payin/v1/sites/%s/payments/%s", s.siteId, paymentId), "PUT")
 	json.Unmarshal(body, &paymentsStatusResponses)
 	return &paymentsStatusResponses
 }

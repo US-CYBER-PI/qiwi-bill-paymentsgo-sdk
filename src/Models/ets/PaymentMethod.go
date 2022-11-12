@@ -1,13 +1,13 @@
 package ets
 
 type PaymentMethod struct {
-	Type      string `json:"type"`
-	MaskedPan string `json:"maskedPan"`
+	Type         string `json:"type"`
+	PaymentToken string `json:"paymentToken"`
 }
 
-func NewPaymentMethod(type_ string, maskedPan string) *PaymentMethod {
+func NewPaymentMethod(type_ string, paymentToken string) *PaymentMethod {
 	return &PaymentMethod{
-		Type:      type_,
-		MaskedPan: maskedPan,
+		Type:         type_,
+		PaymentToken: paymentToken,
 	}
 }
