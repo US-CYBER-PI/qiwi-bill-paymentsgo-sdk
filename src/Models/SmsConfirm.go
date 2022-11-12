@@ -1,5 +1,7 @@
 package Models
 
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/Ets"
+
 type SmsConfirm struct {
 	RequestId string `json:"requestId"`
 	SmsCode   string `json:"smsCode"`
@@ -13,7 +15,6 @@ func NewSmsConfirm(RequestId string, SmsCode string) *SmsConfirm {
 }
 
 type SmsConfirmResponses struct {
-	TokenValue       string `json:"token.value"`
-	TokenExpiredDate string `json:"token.expiredDate"`
-	Status           string `json:"status.value"`
+	TokenValue Ets.Token  `json:"token"`
+	Status     Ets.Status `json:"status"`
 }
