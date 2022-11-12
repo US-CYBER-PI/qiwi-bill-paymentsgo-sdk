@@ -34,6 +34,35 @@ func (s *Client) HttpRequest(js []byte, uri, method string) []byte {
 
 }
 
+func (s *Client) SmsConfirm(bills Models.SmsConfirm) *Models.SmsConfirm {
+
+	var smsConfirm Models.SmsConfirm
+
+	b, err := json.Marshal(bills)
+	if err == nil {
+	}
+	var body = s.HttpRequest(b, fmt.Sprintf("payin-tokenization-api/v1/sites/%s/token-requests/complete", s.siteId), "POST")
+
+	json.Unmarshal(body, &smsConfirm)
+
+	return &smsConfirm
+}
+
+func (s *Client) GeneratePayToken(bills Models.CreateBills) *Models.GeneratePayToken {
+
+	var generatePayToken Models.GeneratePayToken
+
+	b, err := json.Marshal(bills)
+	if err == nil {
+	}
+
+	var body = s.HttpRequest(b, fmt.Sprintf("payin-tokenization-api/v1/sites/%s/token-requests", s.siteId), "POST")
+
+	json.Unmarshal(body, &generatePayToken)
+
+	return &generatePayToken
+}
+
 func (s *Client) CreateBills(bills Models.CreateBills, billId string) *Models.CreateBillsResponses {
 
 	var createBillsResponses Models.CreateBillsResponses
