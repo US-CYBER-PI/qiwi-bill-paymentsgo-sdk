@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type PaymentCardInfo struct {
 	IssuingCountry string `json:"issuingCountry"`

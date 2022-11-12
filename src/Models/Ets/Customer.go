@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type Customer struct {
 	Account string `json:"account"`

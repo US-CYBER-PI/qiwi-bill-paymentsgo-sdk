@@ -1,14 +1,14 @@
 package Models
 
-import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/ets"
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/Ets"
 
 type CreateBills struct {
-	Amount             ets.Amount `json:"amount"`
+	Amount             Ets.Amount `json:"amount"`
 	ExpirationDateTime string     `json:"expirationDateTime"`
 	Currency           string     `json:"currency"`
 }
 
-func NewCreateBills(expirationDateTime string, currency string, amount ets.Amount) *CreateBills {
+func NewCreateBills(expirationDateTime string, currency string, amount Ets.Amount) *CreateBills {
 	return &CreateBills{
 		Amount:             amount,
 		ExpirationDateTime: expirationDateTime,
@@ -20,8 +20,8 @@ type CreateBillsResponses struct {
 	SiteId             string     `json:"siteId"`
 	BillId             string     `json:"billId"`
 	InvoiceUid         string     `json:"invoiceUid"`
-	Amount             ets.Amount `json:"amount"`
-	Status             ets.Status `json:"status"`
+	Amount             Ets.Amount `json:"amount"`
+	Status             Ets.Status `json:"status"`
 	Comment            string     `json:"comment"`
 	CreationDateTime   string     `json:"creationDateTime"`
 	ExpirationDateTime string     `json:"expirationDateTime"`

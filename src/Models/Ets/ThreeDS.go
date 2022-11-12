@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type ThreeDS struct {
 	Pares string `json:"pares"`

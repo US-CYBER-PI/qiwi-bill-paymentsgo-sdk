@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type RefundedAmount struct {
 	Value    float64 `json:"value"`

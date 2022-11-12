@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type PaymentMethod struct {
 	Type         string `json:"type"`

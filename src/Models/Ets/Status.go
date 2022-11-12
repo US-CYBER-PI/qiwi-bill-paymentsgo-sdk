@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type Status struct {
 	Value           string `json:"value"`

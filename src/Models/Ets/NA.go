@@ -1,4 +1,4 @@
-package ets
+package Ets
 
 type NA struct {
 	PaymentId       string          `json:"paymentId"`

@@ -1,13 +1,13 @@
 package Models
 
-import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/ets"
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/Ets"
 
 type Payments struct {
-	PaymentMethod ets.PaymentMethod `json:"paymentMethod"`
-	Amount        ets.Amount        `json:"amount"`
+	PaymentMethod Ets.PaymentMethod `json:"paymentMethod"`
+	Amount        Ets.Amount        `json:"amount"`
 }
 
-func NewPayments(paymentMethod ets.PaymentMethod, amount ets.Amount) *Payments {
+func NewPayments(paymentMethod Ets.PaymentMethod, amount Ets.Amount) *Payments {
 	return &Payments{
 		PaymentMethod: paymentMethod,
 		Amount:        amount,
@@ -17,10 +17,10 @@ func NewPayments(paymentMethod ets.PaymentMethod, amount ets.Amount) *Payments {
 type PaymentsResponses struct {
 	PaymentId       string              `json:"paymentId"`
 	CreatedDatetime string              `json:"createdDatetime"`
-	Amount          ets.Amount          `json:"amount"`
-	CapturedAmount  ets.CapturedAmount  `json:"capturedAmount"`
-	RefundedAmount  ets.RefundedAmount  `json:"refundedAmount"`
-	PaymentMethod   ets.PaymentMethod   `json:"paymentMethod"`
-	Status          ets.Status          `json:"status"`
-	PaymentCardInfo ets.PaymentCardInfo `json:"paymentCardInfo"`
+	Amount          Ets.Amount          `json:"amount"`
+	CapturedAmount  Ets.CapturedAmount  `json:"capturedAmount"`
+	RefundedAmount  Ets.RefundedAmount  `json:"refundedAmount"`
+	PaymentMethod   Ets.PaymentMethod   `json:"paymentMethod"`
+	Status          Ets.Status          `json:"status"`
+	PaymentCardInfo Ets.PaymentCardInfo `json:"paymentCardInfo"`
 }

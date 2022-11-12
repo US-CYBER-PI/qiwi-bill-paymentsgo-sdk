@@ -1,12 +1,12 @@
 package Models
 
-import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/ets"
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/Ets"
 
 type BillsListResponses struct {
-	NA ets.NA `json:"n/a"`
+	NA Ets.NA `json:"n/a"`
 }
 
-func NewBillsListResponses(NA ets.NA) *BillsListResponses {
+func NewBillsListResponses(NA Ets.NA) *BillsListResponses {
 	return &BillsListResponses{
 		NA: NA,
 	}
