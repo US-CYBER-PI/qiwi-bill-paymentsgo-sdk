@@ -1,6 +1,6 @@
 package Models
 
-import "us-cyber-pi/qiwi-bill-paymentsgo-sdk/src/Models/ets"
+import "github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models/ets"
 
 type CreateBillsDetailsResponses struct {
 	BillId  string     `json:"billId"`

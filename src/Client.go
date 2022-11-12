@@ -3,7 +3,7 @@ package src
 import (
 	"encoding/json"
 	"fmt"
-	"us-cyber-pi/qiwi-bill-paymentsgo-sdk/src/Models"
+	"github.com/US-CYBER-PI/qiwi-bill-paymentsgo-sdk/src/Models"
 )
 
 type Client struct {
