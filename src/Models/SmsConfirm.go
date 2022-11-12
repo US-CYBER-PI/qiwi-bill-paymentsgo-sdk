@@ -15,4 +15,5 @@ func NewSmsConfirm(RequestId string, SmsCode string) *SmsConfirm {
 type SmsConfirmResponses struct {
 	TokenValue       string `json:"token.value"`
 	TokenExpiredDate string `json:"token.expiredDate"`
+	Status           string `json:"status.value"`
 }
